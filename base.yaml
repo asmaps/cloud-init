@@ -1,0 +1,21 @@
+#cloud-config
+users:
+    - name: root
+      lock_passwd: true
+    - name: arne
+      sudo: true
+      ssh_authorized_keys:
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7ab/oIVCj4RupJiF4wFBe/JApvrH1Ri4+crQUNBd6O asmaps@naos
+      lock_passwd: true
+
+packages:
+    - pwgen
+    - zsh
+    - python3
+    - vim
+    - git
+    - tmux
+
+package_update: true
+package_upgrade: true
+package_reboot_if_required: true
